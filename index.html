@@ -73,10 +73,10 @@
 <main>
 
   <h1>Politique de confidentialité — Pli PDF</h1>
-  <p class="date">Dernière mise à jour : 19 septembre 2026 · Application « Pli PDF » (iOS), version 1.0.0</p>
+  <p class="date">Dernière mise à jour : 28 septembre 2026 · Application « Pli PDF » (iPhone et Android), version 1.0.0</p>
 
   <p class="chapeau">
-    Pli PDF est un éditeur de PDF pour iPhone et iPad : scanner un document, fusionner, découper,
+    Pli PDF est un éditeur de PDF pour iPhone, iPad et téléphones Android : scanner un document, fusionner, découper,
     faire pivoter, compresser, signer, apposer un filigrane, caviarder, numéroter, protéger par
     mot de passe, reconnaître le texte. Cette page explique exactement ce que l'application fait
     de vos informations.
@@ -86,8 +86,11 @@
     <strong>L'essentiel.</strong> Pli PDF n'a pas de compte, pas d'inscription et aucun serveur qui
     lui appartienne. Vos documents, vos scans et vos signatures restent sur votre appareil : ils
     ne sont jamais envoyés à Kanea consulting SRL ni à personne d'autre. Les seules données qui
-    quittent l'appareil concernent l'achat de « Pli PDF Pro », et elles passent par Apple et par
-    RevenueCat. Aucune publicité, aucun traceur, aucune mesure d'audience.
+    quittent l'appareil concernent l'achat de « Pli PDF Pro », et elles passent par Apple ou Google
+    Play, et par RevenueCat. Sur Android s'y ajoutent les mesures techniques que les briques
+    d'analyse d'images de Google (ML Kit) envoient à Google sur leur propre fonctionnement — jamais
+    vos images ni vos documents. Aucune publicité, aucun traceur, aucune mesure d'audience pour
+    notre compte.
   </div>
 
   <h2>1. Qui est responsable</h2>
@@ -104,15 +107,17 @@
   <h2>2. Pas de compte, pas d'inscription</h2>
   <p>
     Pli PDF ne demande ni adresse e-mail, ni mot de passe, ni numéro de téléphone, ni nom. Il n'y a
-    aucune création de compte, aucune connexion, aucune identification par Apple ou par un réseau
-    social. L'application ne sait pas qui vous êtes, et nous non plus.
+    aucune création de compte, aucune connexion, aucune identification par Apple, par Google ou par
+    un réseau social. L'application ne sait pas qui vous êtes, et nous non plus.
   </p>
 
   <h2>3. Ce qui reste sur votre appareil</h2>
   <p>
     Tout le travail de Pli PDF — le scan, la fusion, la découpe, la compression, la signature, le
-    caviardage, la reconnaissance de texte — se fait sur votre appareil, avec les outils fournis
-    par iOS (PDFKit, VisionKit, Vision). Rien n'est envoyé vers un serveur pour être traité.
+    caviardage, la reconnaissance de texte — se fait sur votre appareil : sur iPhone, avec les
+    outils d'Apple (PDFKit, VisionKit, Vision) ; sur Android, avec PdfBox (une bibliothèque libre
+    intégrée à l'application), le moteur PDF d'Android et ML Kit de Google, qui fonctionne sur
+    l'appareil. Rien n'est envoyé vers un serveur pour être traité.
   </p>
   <p>
     Les éléments ci-dessous sont enregistrés dans l'espace privé de l'application sur votre
@@ -157,14 +162,22 @@
         <td>Pour que l'application se souvienne de vos choix d'affichage</td>
         <td>Réglages de l'application, sur l'appareil</td>
       </tr>
+      <tr>
+        <td>Sur Android : des copies de travail de vos documents (affichage des annotations,
+            impression, et documents protégés déjà déverrouillés sur Android 14 et versions
+            antérieures)</td>
+        <td>Android ne sait pas afficher ces documents autrement</td>
+        <td>Cache privé de l'application, sur l'appareil, vidé à chaque lancement</td>
+      </tr>
     </tbody>
   </table>
   </div>
 
   <h3>Le texte reconnu et les miniatures</h3>
   <p>
-    La reconnaissance de texte utilise le moteur d'Apple, qui fonctionne hors ligne, sur
-    l'appareil. Le texte reconnu est déposé dans le PDF que vous obtenez, et nulle part ailleurs.
+    La reconnaissance de texte utilise le moteur d'Apple sur iPhone, et ML Kit de Google, avec un
+    modèle intégré à l'application, sur Android : dans les deux cas, elle fonctionne hors ligne,
+    sur l'appareil. Le texte reconnu est déposé dans le PDF que vous obtenez, et nulle part ailleurs.
     Les miniatures des documents ne vivent qu'en mémoire, le temps que l'application est ouverte,
     et ne sont pas écrites sur le disque.
   </p>
@@ -176,8 +189,14 @@
     n'est écrit ni dans un fichier, ni dans les réglages, ni dans le trousseau : il disparaît
     quand vous quittez l'application.
   </p>
+  <p>
+    Sur Android 14 et les versions antérieures, qui ne savent pas afficher un PDF protégé, Pli PDF
+    garde en plus, le temps de la session, une copie déverrouillée du document dans son cache
+    privé. Elle est effacée au plus tard au lancement suivant de l'application. Votre fichier,
+    lui, reste protégé.
+  </p>
 
-  <h3>Vos documents sont visibles dans l'app Fichiers</h3>
+  <h3>Sur iPhone, vos documents sont visibles dans l'app Fichiers</h3>
   <p>
     Le dossier de Pli PDF est accessible depuis l'application Fichiers d'Apple, sur votre appareil.
     C'est volontaire : vous restez maître de vos fichiers, et vous pouvez les copier ailleurs sans
@@ -186,11 +205,20 @@
     appartiennent à Apple et à votre compte, pas à nous ; nous n'y avons aucun accès.
   </p>
 
+  <h3>Sur Android, vos documents restent dans l'espace privé de l'application</h3>
+  <p>
+    Les autres applications n'y ont pas accès. Pli PDF exclut aussi ses données des sauvegardes
+    Google et des transferts vers un nouveau téléphone : pour garder un document ailleurs,
+    exportez-le ou partagez-le depuis l'application.
+  </p>
+
   <h2>4. Ce qui quitte l'appareil</h2>
   <p>
     Un seul cas : l'achat de <strong>Pli PDF Pro</strong>, un achat unique, sans abonnement, qui
-    débloque certaines fonctions. Le paiement lui-même est entièrement réalisé par Apple ; nous ne
-    voyons jamais votre nom, votre adresse, votre moyen de paiement ni votre identifiant Apple.
+    débloque certaines fonctions. Le paiement lui-même est entièrement réalisé par Apple sur
+    iPhone, et par Google Play sur Android ; nous ne voyons jamais votre nom, votre adresse, votre
+    moyen de paiement ni votre identifiant Apple ou Google. Sur Android s'ajoutent les mesures
+    techniques de ML Kit, décrites plus bas.
   </p>
 
   <h3>Les services tiers réellement utilisés</h3>
@@ -207,11 +235,18 @@
         <td>Vendre et valider l'achat, permettre le remboursement et le partage familial</td>
       </tr>
       <tr>
+        <td><strong>Google</strong> — Google Play et son système de facturation (Android)</td>
+        <td>Les informations nécessaires au paiement et au reçu d'achat, gérées par Google selon
+            ses propres règles</td>
+        <td>Vendre et valider l'achat, permettre le remboursement</td>
+      </tr>
+      <tr>
         <td><strong>RevenueCat, Inc.</strong> — gestion des achats intégrés (SDK intégré à
             l'application)</td>
-        <td>Un identifiant anonyme créé par l'application sur votre appareil, le reçu d'achat de
-            l'App Store, ainsi que des informations techniques : modèle d'appareil, version d'iOS,
-            version de l'application, pays et langue de la boutique</td>
+        <td>Un identifiant pseudonyme créé par l'application sur votre appareil, le reçu d'achat
+            de l'App Store ou de Google Play, ainsi que des informations techniques : modèle
+            d'appareil, version du système, version de l'application, pays et langue de la
+            boutique</td>
         <td>Afficher le bon prix dans votre devise, savoir si l'accès Pro est actif, et le
             restaurer sur vos autres appareils</td>
       </tr>
@@ -221,16 +256,20 @@
 
   <p>
     RevenueCat ne reçoit <strong>aucun de vos documents</strong>, aucune image, aucune signature,
-    aucun nom et aucune adresse e-mail. L'identifiant transmis est un numéro anonyme, tiré au sort
-    à l'installation, qui ne permet pas de vous identifier. Pli PDF n'active pas la collecte de
-    l'identifiant publicitaire (IDFA) : aucun identifiant publicitaire n'est lu ni transmis.
+    aucun nom et aucune adresse e-mail. L'identifiant transmis est un numéro tiré au sort à
+    l'installation : il ne dit pas qui vous êtes, mais il relie entre eux les échanges d'un même
+    appareil, ce qui en fait une donnée pseudonyme. Pli PDF n'active pas la collecte de
+    l'identifiant publicitaire (IDFA sur iPhone, identifiant publicitaire Google sur Android) :
+    aucun identifiant publicitaire n'est lu ni transmis, et sur Android l'autorisation
+    correspondante est même retirée de l'application.
   </p>
   <p>
     RevenueCat est une société établie aux États-Unis : ces données techniques d'achat sont donc
     traitées hors de l'Union européenne, dans le cadre prévu par leurs propres engagements
     contractuels. Leur politique est consultable sur
-    <a href="https://www.revenuecat.com/privacy/">revenuecat.com/privacy</a>, et celle d'Apple sur
-    <a href="https://www.apple.com/legal/privacy/fr-ww/">apple.com/legal/privacy</a>.
+    <a href="https://www.revenuecat.com/privacy/">revenuecat.com/privacy</a>, celle d'Apple sur
+    <a href="https://www.apple.com/legal/privacy/fr-ww/">apple.com/legal/privacy</a>, et celle de
+    Google sur <a href="https://policies.google.com/privacy?hl=fr">policies.google.com/privacy</a>.
   </p>
   <p>
     <strong>Base légale (RGPD).</strong> Ce traitement est nécessaire à l'exécution du contrat qui
@@ -240,11 +279,36 @@
   <p>
     Si vous n'achetez jamais Pli PDF Pro, l'application n'en reste pas moins reliée au service de
     RevenueCat au lancement, pour lire le prix de l'offre et vérifier qu'aucun achat antérieur
-    n'est à restaurer. Aucune donnée personnelle n'est transmise à cette occasion : seulement
-    l'identifiant anonyme et les informations techniques décrites ci-dessus.
+    n'est à restaurer. Rien d'autre n'est transmis à cette occasion que l'identifiant pseudonyme
+    et les informations techniques décrites ci-dessus.
+  </p>
+
+  <h3 id="ml-kit">Sur Android : les mesures techniques de ML Kit</h3>
+  <p>
+    Le scanner de documents et la reconnaissance de texte de la version Android reposent sur
+    <strong>ML Kit</strong>, une brique de Google. L'analyse se fait sur le téléphone : vos images,
+    vos documents et le texte reconnu ne sont pas envoyés. Google indique en revanche que ces
+    briques peuvent contacter ses serveurs, pour se mettre à jour et pour lui transmettre des
+    mesures techniques sur leur fonctionnement. D'après Google, il s'agit d'informations sur
+    l'appareil (fabricant, modèle, version du système) et sur l'application (nom, version), de
+    mesures de performance (comme la durée d'un traitement), de la configuration utilisée (format
+    et résolution des images), de la taille des données traitées, du type d'événement
+    (démarrage, téléchargement d'un modèle, détection) et des codes d'erreur, accompagnés
+    d'identifiants techniques propres à l'installation — et, pour le scanner, fourni par les
+    services Google Play, d'un identifiant de l'appareil. Ces mesures servent au diagnostic et
+    aux statistiques d'utilisation de ML Kit ; Google ne les transmet pas à des tiers, elles
+    voyagent chiffrées, et nous n'y avons pas accès. Aucun réglage de ML Kit ne permet de les
+    couper.
+  </p>
+  <p>
+    <strong>Base légale (RGPD).</strong> Notre intérêt légitime à vous proposer un scanner et une
+    reconnaissance de texte fiables, qui fonctionnent sur le téléphone. Google LLC étant établie
+    aux États-Unis, ces mesures peuvent être traitées hors de l'Union européenne, dans le cadre
+    des engagements de Google (dont le cadre de protection des données UE–États-Unis).
   </p>
 
   <h2>5. Les autorisations demandées</h2>
+  <h3>Sur iPhone</h3>
   <div class="tableau-conteneur">
   <table>
     <thead>
@@ -275,20 +339,46 @@
     sur votre appareil. Sans l'appareil photo, le scan ne fonctionne pas ; le reste de
     l'application continue de fonctionner normalement.
   </p>
+  <h3>Sur Android</h3>
+  <p>
+    Pli PDF ne demande <strong>pas</strong> l'accès à l'appareil photo : le scanner est celui de
+    Google, qui s'ouvre dans les services Google Play et ne rend à l'application que les pages que
+    vous avez scannées. Pour vos photos, Pli PDF passe par le sélecteur d'Android : l'application
+    ne voit que les photos que vous choisissez, sans aucune autorisation sur votre galerie.
+  </p>
+  <div class="tableau-conteneur">
+  <table>
+    <thead>
+      <tr><th>Autorisation</th><th>Quand</th><th>Pour quoi faire</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Écriture dans le stockage</td>
+        <td>Android 8 et 9 seulement, si vous enregistrez des images dans la galerie</td>
+        <td>Y déposer les images que vous avez vous-même demandé d'exporter</td>
+      </tr>
+      <tr>
+        <td>Accès à Internet</td>
+        <td>Accordé à l'installation, sans question, comme pour toute application</td>
+        <td>L'achat de Pli PDF Pro (Google Play, RevenueCat) et le fonctionnement de ML Kit</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
   <h2>6. Le partage, c'est vous qui le déclenchez</h2>
   <p>
     Quand vous utilisez le bouton de partage pour envoyer un document par e-mail, par message,
-    vers iCloud Drive ou vers une autre application, c'est la feuille de partage d'Apple qui
-    prend le relais, et c'est vous qui choisissez la destination. Ce qui arrive au document
+    vers un service de stockage en ligne ou vers une autre application, c'est la feuille de
+    partage d'Apple ou d'Android qui prend le relais, et c'est vous qui choisissez la destination. Ce qui arrive au document
     ensuite dépend de l'application ou du service que vous avez choisi, et non de Pli PDF.
   </p>
 
   <h2>7. Ce que Pli PDF ne fait pas</h2>
   <ul>
     <li>Aucune publicité, aucune régie publicitaire.</li>
-    <li>Aucun outil de mesure d'audience ou de statistiques (pas de Google Analytics, Firebase,
-        Sentry, Amplitude ou équivalent).</li>
+    <li>Aucun outil de mesure d'audience ou de statistiques pour notre compte (pas de Google
+        Analytics, Firebase, Sentry, Amplitude ou équivalent).</li>
     <li>Aucun traceur, aucun suivi entre applications ou entre sites : l'application ne demande
         pas l'autorisation de suivi, parce qu'elle n'en a pas l'usage.</li>
     <li>Aucun envoi de vos documents vers un serveur, le nôtre ou celui d'un autre — y compris
@@ -319,9 +409,17 @@
         <td>Le temps de la session ; effacés dès que l'application est fermée</td>
       </tr>
       <tr>
-        <td>Données d'achat chez RevenueCat et Apple</td>
+        <td>Données d'achat chez RevenueCat, Apple et Google</td>
         <td>Conservées par ces sociétés le temps nécessaire à la gestion de l'achat et à ses
             obligations comptables et légales, afin que la restauration reste possible</td>
+      </tr>
+      <tr>
+        <td>Mesures techniques de ML Kit (Android)</td>
+        <td>Conservées par Google selon ses propres règles ; nous n'y avons pas accès</td>
+      </tr>
+      <tr>
+        <td>Copies de travail dans le cache (Android)</td>
+        <td>Effacées à chaque lancement de l'application</td>
       </tr>
     </tbody>
   </table>
@@ -333,7 +431,7 @@
     </p>
   </div>
 
-  <h2>9. Vos droits</h2>
+  <h2 id="droits">9. Vos droits</h2>
   <p>
     Le règlement européen sur la protection des données (RGPD) vous donne un droit d'accès, de
     rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données
@@ -349,8 +447,9 @@
     Pour les données d'achat détenues par RevenueCat, écrivez-nous à
     <a href="mailto:contact@kaneaconsulting.be">contact@kaneaconsulting.be</a> : nous ferons le
     nécessaire auprès d'eux. Pour retrouver l'enregistrement correspondant, il faudra la date et
-    le pays de l'achat, ou son reçu Apple — puisque, faute de compte, rien ne relie autrement cet
-    achat à votre personne.
+    le pays de l'achat, ou son reçu Apple ou Google Play (le numéro de commande qui commence par
+    « GPA. ») — puisque, faute de compte, rien ne relie autrement cet achat à votre personne.
+    Pour les mesures techniques de ML Kit, c'est Google qui répond, selon sa propre politique.
   </p>
   <p>
     Vous pouvez enfin introduire une réclamation auprès de l'Autorité de protection des données
@@ -367,7 +466,7 @@
   <h2>11. Sécurité</h2>
   <p>
     Vos documents sont conservés dans l'espace privé de l'application, protégé par le chiffrement
-    de l'appareil qu'iOS met en place dès qu'un code d'accès est défini. Pli PDF vous permet en
+    de l'appareil qu'iOS ou Android met en place dès qu'un code de verrouillage est défini. Pli PDF vous permet en
     outre de protéger un PDF par mot de passe. Ce mot de passe n'est connu que de vous : nous ne
     pouvons ni le retrouver, ni ouvrir un document à votre place.
   </p>
